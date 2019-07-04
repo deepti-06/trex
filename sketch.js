@@ -31,9 +31,9 @@ function preload(){
   gameOverImg = loadImage("gameOver.png");
   restartImg = loadImage("restart.png");
   
-  sound1= loadSound('jump.mp3');
-  sound2= loadSound('checkPoint.mp3');
-  sound3= loadSound('die.mp3');
+  //sound1= loadSound('jump.mp3');
+  //sound2= loadSound('checkPoint.mp3');
+  //sound3= loadSound('die.mp3');
 }
 
 function setup() {
@@ -67,6 +67,10 @@ function setup() {
   
   cloudsGroup = new Group();
   obstaclesGroup = new Group();
+  
+  sound1= loadSound('jump.mp3');
+  sound2= loadSound('checkPoint.mp3');
+  sound3= loadSound('die.mp3');
   
   score = 0;
 }
