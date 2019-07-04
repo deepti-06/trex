@@ -11,7 +11,7 @@ var obstaclesGroup, obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obsta
 var score=0;
 
 var gameOver, restart;
-let sound1, sound2, sound3;
+//let sound1, sound2, sound3;
 
 function preload(){
   trex_running =   loadAnimation("trex1.png","trex3.png","trex4.png");
@@ -33,7 +33,7 @@ function preload(){
   
   //sound1= loadSound('jump.mp3');
   //sound2= loadSound('checkPoint.mp3');
-  //sound3= loadSound('die.mp3');
+ // sound3= loadSound('die.mp3');
 }
 
 function setup() {
@@ -68,15 +68,12 @@ function setup() {
   cloudsGroup = new Group();
   obstaclesGroup = new Group();
   
-  sound1= loadSound('jump.mp3');
-  sound2= loadSound('checkPoint.mp3');
-  sound3= loadSound('die.mp3');
-  
+ 
   score = 0;
 }
 
 function draw() {
-  trex.debug = true;
+  //trex.debug = true;
   background(255);
   text("Score: "+ score, 500,50);
   
@@ -85,7 +82,7 @@ function draw() {
     ground.velocityX = -(6 + 3*score/100);
   
     if(keyDown("space") && trex.y >= 159) {
-      sound1.play();
+      //sound1.play();
       trex.velocityY = -12;
     }
   
@@ -99,12 +96,12 @@ function draw() {
     spawnClouds();
     spawnObstacles();
     
-    if(score>0 && score%100===0){
-      sound2.play();
-    }
+    //if(score>0 && score%100===0){
+     // sound2.play();
+    //}
   
     if(obstaclesGroup.isTouching(trex)){
-       sound3.play(); 
+       //sound3.play(); 
       gameState = END;
     }
   }
@@ -159,7 +156,7 @@ function spawnClouds() {
 function spawnObstacles() {
   if(frameCount % 60 === 0) {
     var obstacle = createSprite(600,165,10,40);
-    obstacle.debug = false;
+   // obstacle.debug = false;
     obstacle.velocityX = -(6 + 3*score/100);
     
     //generate random obstacles
